@@ -1486,12 +1486,13 @@ containing a value of this type.
         public static final int url=0x7f020088;
     }
     public static final class id {
-        public static final int ButtonSendFeedback=0x7f080071;
+        public static final int ButtonSendFeedback=0x7f080072;
         public static final int Museum_Image=0x7f080050;
         public static final int ScrollView01=0x7f08006a;
         public static final int TextViewTitle0=0x7f08006b;
         public static final int TextViewTitle1=0x7f08006c;
-        public static final int TextViewTitle2=0x7f080070;
+        public static final int TextViewTitle2=0x7f08006e;
+        public static final int TextViewTitle3=0x7f080070;
         public static final int action_bar=0x7f08002e;
         public static final int action_bar_activity_content=0x7f080027;
         public static final int action_bar_container=0x7f08002d;
@@ -1503,7 +1504,7 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f080028;
         public static final int action_menu_presenter=0x7f080029;
         public static final int action_mode_close_button=0x7f080036;
-        public static final int action_settings=0x7f080072;
+        public static final int action_settings=0x7f080073;
         public static final int activity_chooser_view_content=0x7f080037;
         public static final int always=0x7f08001e;
         public static final int art_image=0x7f080063;
@@ -1514,7 +1515,7 @@ containing a value of this type.
         public static final int buy_now=0x7f08000f;
         public static final int buy_with_google=0x7f08000e;
         public static final int checkbox=0x7f08003f;
-        public static final int city_spinner=0x7f08006e;
+        public static final int city_spinner=0x7f08006f;
         public static final int classic=0x7f080011;
         public static final int collapseActionView=0x7f080020;
         public static final int contact_linearlayout=0x7f08005d;
@@ -1562,7 +1563,7 @@ containing a value of this type.
         public static final int museum_location_hardcode=0x7f080058;
         public static final int museum_map=0x7f080060;
         public static final int museum_name=0x7f080051;
-        public static final int museum_spinner=0x7f08006f;
+        public static final int museum_spinner=0x7f080071;
         public static final int never=0x7f08001c;
         public static final int none=0x7f080000;
         public static final int normal=0x7f080001;
@@ -1718,6 +1719,7 @@ containing a value of this type.
          */
         public static final int action_settings=0x7f070027;
         public static final int app_name=0x7f07002f;
+        public static final int city_name=0x7f070035;
         /**  Button in confirmation dialog to enable Google Play services.  Clicking it
         will direct user to application settings of Google Play services where they
         can enable it [CHAR LIMIT=40] 
@@ -1814,7 +1816,7 @@ containing a value of this type.
         public static final int spinner_prompt=0x7f070034;
         public static final int state_name=0x7f070031;
         public static final int submitbutton=0x7f070033;
-        public static final int title_activity_edocent_splash=0x7f070035;
+        public static final int title_activity_edocent_splash=0x7f070036;
         public static final int title_activity_museum_location=0x7f07002e;
         /**  Text on a placeholder buy button when Google Play services is not
          available or up-to-date 

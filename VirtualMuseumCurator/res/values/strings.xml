@@ -32,6 +32,7 @@
     <string name="museum_prompt">Please Select a Museum:</string>
     <string name="submitbutton">Look For A Museum!</string>
     <string name="spinner_prompt">States</string>
+    <string name="city_name">Please Select a city</string>
 
     <string-array name="state_list">
         <item>AL</item>
