@@ -32,8 +32,8 @@
 
          <ImageView
              android:id="@+id/art_image"
-             android:layout_width="230dp"
-             android:layout_height="164dp"
+             android:layout_width="260dp"
+             android:layout_height="184dp"
              android:background="@drawable/art_image" />
 
 	    <LinearLayout 
@@ -93,5 +93,14 @@
 			         />
 	        </LinearLayout> 
     </LinearLayout>
+
+   <Button
+       android:id="@+id/art_share"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_alignLeft="@+id/linearlayout_art"
+       android:layout_below="@+id/linearlayout_art"
+       android:layout_marginLeft="81dp"
+       android:layout_marginTop="14dp" />
 
 </RelativeLayout>
