@@ -114,6 +114,11 @@ public class ArtInfoActivity extends ActionBarActivity {
 	   adapter =new SocialAuthAdapter(new ResponseListener());
 	    
 	    adapter.addProvider(Provider.FACEBOOK,R.drawable.facebook);
+	    //adapter.addProvider(Provider.TWITTER, R.drawable.twitter);
+	    adapter.addProvider(Provider.LINKEDIN, R.drawable.linkedin);
+	    adapter.addProvider(Provider.YAHOO, R.drawable.yahoo);
+	    adapter.addProvider(Provider.TWITTER, R.drawable.twitter);
+	    adapter.addProvider(Provider.INSTAGRAM, R.drawable.instagram);
 	    adapter.enable(sharefacebook);
 	    
 	   /* sharefacebook.setOnClickListener(new OnClickListener() 

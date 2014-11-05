@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.bucs.virtualmuseumcurator.collections.CollectionPageActivity;
 import com.bucs.virtualmuseumcurator.location.MuseumLocationActivity;
 import com.google.android.gms.maps.model.LatLng;
+import com.bucs.virtualmuseumcurator.codescanner.ScannerAcivity;
 
 public class HomePageFragment  extends ListFragment{
 	
@@ -22,6 +23,8 @@ public class HomePageFragment  extends ListFragment{
 	private Activity context;
 	private float lat;
 	private float lng;
+	
+	
 	
 	
    public HomePageFragment(String Address, float lat,float lng,String phone,String title,Activity context)
@@ -39,7 +42,7 @@ public class HomePageFragment  extends ListFragment{
 	{
 		   super.onActivityCreated(saveInstanceState);
 		    String[] values = new String[] { "information","Tour", "Upcoming Events", "Spotlight of the week",
-		        "Collection","Events","Maps","Register for notification" };
+		        "Collection","Events","Maps","Scan for information" };
 		    /*ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
 		        android.R.layout.simple_list_item_1, values);*/
 		    com.bucs.virtualmuseumcurator.museumhome.HomePageAdapter adapter= new HomePageAdapter(getActivity(),values);
@@ -54,6 +57,7 @@ public class HomePageFragment  extends ListFragment{
     	String item= (String) getListAdapter().getItem(position);
     	
     	switch(position){
+    	
     	  
     	case 4:
     		Intent intentC=new Intent(this.context,CollectionPageActivity.class);
@@ -74,6 +78,13 @@ public class HomePageFragment  extends ListFragment{
     		startActivity(intent);
     		Toast.makeText(getActivity(), item+" Map triggered", Toast.LENGTH_LONG).show();
     		break;
+    		
+    	case 7:
+    		//Intent intentScan=new Intent("com.google.zxing.client.SCAN");
+    		Intent intentScan =new Intent(this.context,ScannerAcivity.class);
+    		startActivity(intentScan);
+    		
+    		
     		
     	default:
     		    Log.d("No activity","********");

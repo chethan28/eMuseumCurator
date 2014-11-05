@@ -4,6 +4,7 @@ package com.bucs.virtualmuseumcurator.museumhome;
 
 import android.app.Activity;
 import android.app.FragmentManager;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -34,6 +35,25 @@ public class MuseumDescActivity extends ActionBarActivity {
 	private float lng;
 	private Activity context;
 	private String title;
+	
+	public void onActivityResult(int requestCode, int resultCode, Intent intent){     
+	      if(requestCode == 0)     
+	      {         
+	                        if(resultCode == RESULT_OK)         
+	                        { 
+	                                    String contents = intent.getStringExtra("SCAN_RESULT"); 
+	                                     String format = intent.getStringExtra("SCAN_RESULT_FORMAT");           
+	                                       Log.i("xZing", "contents: "+contents+" format: "+format);          
+	                                           // Handle successful scan       
+	                         }        
+	                         else if(resultCode == RESULT_CANCELED)       
+	                           {              // Handle cancel             
+	                           Log.i("xZing", "Cancelled");        
+	                          }    
+	                        } 
+	          }
+	
+	
 	
 	
 	private class PerformMuseumSearch extends AsyncTask<String, Void, MuseumHomePageData> {
