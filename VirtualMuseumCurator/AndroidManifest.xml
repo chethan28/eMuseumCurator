@@ -66,8 +66,12 @@
             android:label="@string/title_activity_art_info" >
         </activity>
         <activity
-            android:name="com.bucs.virtualmuseumcurator.codescanner.ScannerAcivity"
+            android:name=".codescanner.ScannerAcivity"
             android:label="@string/title_activity_scanner_acivity" >
+        </activity>
+        <activity
+            android:name="com.bucs.virtualmuseumcurator.information.MuseumInformation"
+            android:label="@string/title_activity_museum_information" >
         </activity>
     </application>
 

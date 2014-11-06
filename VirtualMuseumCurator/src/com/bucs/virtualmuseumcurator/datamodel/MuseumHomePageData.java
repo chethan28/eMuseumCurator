@@ -1,5 +1,7 @@
 package com.bucs.virtualmuseumcurator.datamodel;
 
+import java.util.ArrayList;
+
 import android.graphics.Bitmap;
 
 public class MuseumHomePageData {
@@ -14,6 +16,44 @@ public class MuseumHomePageData {
 	private String zipcode;
 	private String VisitorsInfo;
 	private String Ticketprices;
+	private String parking;
+	private String ticket_prices;
+	private String visitor_info;
+	private String membership;
+	private String website;
+	
+	
+	public String getParking() {
+		return parking;
+	}
+	public void setParking(String parking) {
+		this.parking = parking;
+	}
+	public String getTicket_prices() {
+		return ticket_prices;
+	}
+	public void setTicket_prices(String ticket_prices) {
+		this.ticket_prices = ticket_prices;
+	}
+	public String getVisitor_info() {
+		return visitor_info;
+	}
+	public void setVisitor_info(String visitor_info) {
+		this.visitor_info = visitor_info;
+	}
+	public String getMembership() {
+		return membership;
+	}
+	public void setMembership(String membership) {
+		this.membership = membership;
+	}
+	public String getWebsite() {
+		return website;
+	}
+	public void setWebsite(String website) {
+		this.website = website;
+	}
+	private ArrayList Hours= new ArrayList();
 	
 	public String getVisitorsInfo() {
 		return VisitorsInfo;
@@ -33,8 +73,8 @@ public class MuseumHomePageData {
 	public void setZipcode(String zipcode) {
 		this.zipcode = zipcode;
 	}
-	private String latitude;
-	private String longitude;
+	private float latitude;
+	private float longitude;
 	
 	
 	private String hour_M;
@@ -65,16 +105,16 @@ public class MuseumHomePageData {
 	public void setState(String state) {
 		this.state = state;
 	}
-	public String getLatitude() {
+	public float getLatitude() {
 		return latitude;
 	}
-	public void setLatitude(String latitude) {
-		this.latitude = latitude;
+	public void setLatitude(float f) {
+		this.latitude = f;
 	}
-	public String getLongitude() {
+	public float getLongitude() {
 		return longitude;
 	}
-	public void setLongitude(String longitude) {
+	public void setLongitude(float longitude) {
 		this.longitude = longitude;
 	}
 	public String getHour_M() {
@@ -143,6 +183,12 @@ public class MuseumHomePageData {
 	
 	public Bitmap getImage() {
 		return Image;
+	}
+	public ArrayList getHours() {
+		return Hours;
+	}
+	public void setHours(ArrayList hours) {
+		Hours = hours;
 	}
 	public void setImage(Bitmap image) {
 		Image = image;

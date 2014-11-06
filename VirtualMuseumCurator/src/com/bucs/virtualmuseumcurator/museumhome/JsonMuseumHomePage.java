@@ -50,6 +50,32 @@ public class JsonMuseumHomePage {
 			frontpage.setZipcode(getString("zipCode",jObj));
 			frontpage.setState(getString("state",jObj));
 			frontpage.setHour_M(getString("openingHours_M",jObj));
+			frontpage.setHour_T(getString("openingHours_T",jObj));
+			frontpage.setHour_W(getString("openingHours_W",jObj));
+			frontpage.setHour_R(getString("openingHours_R",jObj));
+			frontpage.setHour_F(getString("openingHours_F",jObj));
+			frontpage.setHour_ST(getString("openingHours_ST",jObj));
+			frontpage.setHour_SN(getString("openingHours_SN",jObj));
+			
+			
+			frontpage.getHours().add(getString("openingHours_M",jObj));
+			frontpage.getHours().add(getString("openingHours_T",jObj));
+			frontpage.getHours().add(getString("openingHours_W",jObj));
+			frontpage.getHours().add(getString("openingHours_R",jObj));
+			frontpage.getHours().add(getString("openingHours_F",jObj));
+			frontpage.getHours().add(getString("openingHours_ST",jObj));
+			frontpage.getHours().add(getString("openingHours_SN",jObj));
+			
+			
+			frontpage.setTicketprices(getString("ticket_prices",jObj));
+			frontpage.setParking(getString("parking",jObj));
+			frontpage.setMembership(getString("membership",jObj));
+			frontpage.setVisitor_info(getString("visitor_info",jObj));
+			frontpage.setWebsite(getString("website",jObj));
+			frontpage.setLatitude(getFloat("latitude",jObj));
+			frontpage.setLongitude(getFloat("longitude",jObj));
+			
+				
 			frontpage.setDescription(getString("description",jObj));
 			return frontpage;
 			

@@ -171,6 +171,8 @@ public class EDocentSplashActivity extends ActionBarActivity implements AdapterV
     	
     	
     	
+    	
+    	
     	 this.spinnerCity=(Spinner)findViewById(R.id.city_spinner);
     	ArrayAdapter<String> dataAdaptercity = new ArrayAdapter<String>(this,
     			android.R.layout.simple_spinner_item, city);
@@ -231,7 +233,16 @@ public class EDocentSplashActivity extends ActionBarActivity implements AdapterV
     	
     	
     	
-
+    public void fillSpinnerCity(String state){
+    	
+    }
+    
+    
+    
+    
+    public void fillSpinnermuseums(String city){
+    	
+    }
 
 	@Override
     public boolean onCreateOptionsMenu(Menu menu) {
