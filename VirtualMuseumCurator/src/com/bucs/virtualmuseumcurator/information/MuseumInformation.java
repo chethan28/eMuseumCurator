@@ -68,21 +68,21 @@ public class MuseumInformation extends ActionBarActivity {
 			 
 			 
 			    Log.d("list##########", this.hours.toString());
-				this.mon.setText( "Monday:"+this.hours.get(0));
-				this.tue.setText("Tuesday"+this.hours.get(1));
-				this.wed.setText( "Wednesday"+this.hours.get(2));
-				this.th.setText( "Thursday"+this.hours.get(3));
-				this.fr.setText( "Friday"+this.hours.get(4));
-				this.st.setText( "Saturday"+this.hours.get(5));
-				this.sn.setText( "Sunday"+this.hours.get(6));
+				this.mon.setText( "Monday :"+this.hours.get(0));
+				this.tue.setText("Tuesday :"+this.hours.get(1));
+				this.wed.setText( "Wednesday :"+this.hours.get(2));
+				this.th.setText( "Thursday :"+this.hours.get(3));
+				this.fr.setText( "Friday :"+this.hours.get(4));
+				this.st.setText( "Saturday :"+this.hours.get(5));
+				this.sn.setText( "Sunday :"+this.hours.get(6));
 				
 				Log.d("%%%%%%%%%%%%%%%%%%", this.membership+this.parking+this.ticketprices+this.website);
+				
 				/*this.memb.setText(this.membership);
 				this.pk.setText(this.parking);*/
 				this.tktp.setText(this.ticketprices);
-				//this.webs.setText(this.website);
+				this.webs.setText(this.website);
 				
-			
 			
 		}
 	}

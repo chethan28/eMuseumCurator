@@ -3,6 +3,8 @@ package com.bucs.virtualmuseumcurator.museumhome;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.util.Log;
+
 import com.bucs.virtualmuseumcurator.datamodel.MuseumHomePageData;
 
 
@@ -44,6 +46,7 @@ public class JsonMuseumHomePage {
     		
     		MuseumHomePageData frontpage=new MuseumHomePageData();
 			JSONObject jObj = new JSONObject(this.JsonString);
+			Log.d("getting json for home page$$$$$$$$$$$$$$$$$$$$$$$$$$$", this.JsonString);
 			frontpage.setMuseumName(getString("name",jObj));
 			frontpage.setStreetAdress(getString("streetAddress",jObj));
 			frontpage.setCity(getString("city",jObj));
@@ -56,6 +59,7 @@ public class JsonMuseumHomePage {
 			frontpage.setHour_F(getString("openingHours_F",jObj));
 			frontpage.setHour_ST(getString("openingHours_ST",jObj));
 			frontpage.setHour_SN(getString("openingHours_SN",jObj));
+			frontpage.setImage(getString("image",jObj));
 			
 			
 			frontpage.getHours().add(getString("openingHours_M",jObj));
@@ -70,10 +74,11 @@ public class JsonMuseumHomePage {
 			frontpage.setTicketprices(getString("ticket_prices",jObj));
 			frontpage.setParking(getString("parking",jObj));
 			frontpage.setMembership(getString("membership",jObj));
-			frontpage.setVisitor_info(getString("visitor_info",jObj));
+			//frontpage.setVisitor_info(getString("visitor_info",jObj));
+			frontpage.setVisitor_info("Nothing");
 			frontpage.setWebsite(getString("website",jObj));
-			frontpage.setLatitude(getFloat("latitude",jObj));
-			frontpage.setLongitude(getFloat("longitude",jObj));
+			frontpage.setLatitude(getString("latitude",jObj));
+			frontpage.setLongitude(getString("longitude",jObj));
 			
 				
 			frontpage.setDescription(getString("description",jObj));

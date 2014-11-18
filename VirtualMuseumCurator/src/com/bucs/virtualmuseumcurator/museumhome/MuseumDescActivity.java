@@ -45,8 +45,8 @@ public class MuseumDescActivity extends ActionBarActivity {
 	private String parking;
 	private String visitor_info;
 	private ArrayList hours;
-	private float lat;
-	private float lng;
+	private String lat;
+	private String lng;
 	private Activity context;
 	private String title;
 	private String ticketprices;
@@ -71,14 +71,58 @@ public class MuseumDescActivity extends ActionBarActivity {
 	
 	
 	
+	private  class URLtoImage extends AsyncTask<String, Void, Bitmap> {
+		
+			
+			protected Bitmap doInBackground(String... params) {
+				try {
+					Log.d("Bit!!!!!!!!!!!!!!!!!!!!!!!", params[0]);
+					URL url = new URL(params[0]);
+					HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+					connection.setDoInput(true);
+					connection.connect();
+					InputStream input = connection.getInputStream();
+					return BitmapFactory.decodeStream(input);
+					 
+					
+				} catch (Exception e) {
+					// TODO: handle exception
+					e.printStackTrace();
+					return null;
+			}
+		}
+			
+			protected void onPostExecute(Bitmap feed) {
+		        // TODO: check this.exception 
+		        // TODO: do something with the feed
+				bitmap=feed;
+				MuseumImage.setImageBitmap(bitmap);
+			    		    
+		    }
+		
+		}
+	
+	
+	
+	
+	
 	private class PerformMuseumSearch extends AsyncTask<String, Void, MuseumHomePageData> {
-
+		
+		private final String baseurl="https://s3.amazonaws.com/edocent/";
 		   @Override
 		   protected MuseumHomePageData doInBackground(String... params) {
 			 try{ Log.d("backgroundThread","PerformMuseumSearch");
 			  String url =params[0];  
-			  MuseumHomePageData Text=httprequest.retrieve(url);
+			  MuseumHomePageData Text=httprequest.retrieve(url); 
 		      Log.d("result", Text.toString());
+		      
+		        URL urlimage = new URL(baseurl+Text.getImage());
+				HttpURLConnection connection = (HttpURLConnection) urlimage.openConnection();
+				connection.setDoInput(true);
+				connection.connect();
+				InputStream input = connection.getInputStream();
+				Text.setMuseumImageinBit(BitmapFactory.decodeStream(input));
+		      	      
 		      return Text;
 			 }
 			 catch(Exception e)
@@ -94,13 +138,16 @@ public class MuseumDescActivity extends ActionBarActivity {
 		      @Override
 		      public void run() {
 		    	  
+		    	  
+		    	  bitmap=result.getMuseumImageinBit();
+		          MuseumImage.setImageBitmap(bitmap);
 		    	  TextName.setText(result.getMuseumName());
 		    	  TextLocation.setText(result.getStreetAdress()+","+ result.getCity()+"-"+result.getZipcode());
-		         // TextHour.setText(result.getHour_M());
 		          TextDescription.setText(result.getDescription());
-		          //lat=(float) 42.339151000000001;
-		          //lng=(float)-71.093853099999990;
 		          Address=(String) TextLocation.getText();
+		          
+		          
+		          
 		          Phone= "1234567811111";
 		          title="I am here Thread";
 		          
@@ -109,16 +156,11 @@ public class MuseumDescActivity extends ActionBarActivity {
 		          parking=result.getParking();
 		          visitor_info=result.getVisitor_info();
 		          website=result.getWebsite();
-		          ticketprices=result.getTicket_prices();
+		          ticketprices=result.getTicketprices();
 		          lat=result.getLatitude();
 		          lng=result.getLongitude();
-		         // Log.d("###################", ticketprices);
-	             
-		          Log.d("Beforeeeeeeeeeeeeeee!!!!!!!!!!!!!!!!!!!!!!!", "###########");
-		          bitmap = getBitmapFromURL("https://s3.amazonaws.com/edocent/museum_images/mfa.jpg");
-		          MuseumImage.setImageBitmap(bitmap); 
-		          
-		          
+		         // Log.d("###################", ticketprices);	             
+		         // Log.d("Beforeeeeeeeeeeeeeee!!!!!!!!!!!!!!!!!!!!!!!", "###########");   
 		          FragmentManager fm= getFragmentManager();
 		          android.app.FragmentTransaction ft=fm.beginTransaction();
 		          HomePageFragment frag=new HomePageFragment(Address,lat,lng,Phone,title,context,membership,website,ticketprices,hours,parking,visitor_info);
@@ -164,10 +206,16 @@ public class MuseumDescActivity extends ActionBarActivity {
        // TextHour=(TextView)findViewById(R.id.hours);
         TextDescription=(TextView)findViewById(R.id.museum_description);
         PerformMuseumSearch task= new PerformMuseumSearch(); 
-        task.execute(new String[] { "http://edocent.herokuapp.com/curator/1/"});
+        //task.execute(new String[] { "http://edocent.herokuapp.com/curator/1/"});
+		Bundle extras=getIntent().getExtras();
+		if(extras!=null){
+		String primarykey=extras.getString("musuemprimarykey"); 
+		Log.d("Primary key Passsssssssssssssssssssssss", primarykey);
+        task.execute(new String[] {"http://edocent.herokuapp.com/curator/"+primarykey+"/"});
+		}
         
-        lat=(float) 42.339151000000001;
-        lng=(float)-71.093853099999990;
+        //lat= "42.339151000000001";
+        //lng="-71.093853099999990";
         //Address=(String) TextLocation.getText();
         Address="143 Park Dr";
         Phone= "12345678000000";

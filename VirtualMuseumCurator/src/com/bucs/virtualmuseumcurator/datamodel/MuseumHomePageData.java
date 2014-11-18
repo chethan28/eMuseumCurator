@@ -7,7 +7,7 @@ import android.graphics.Bitmap;
 public class MuseumHomePageData {
 
 	
-	private Bitmap Image;	
+	private String Image;	
 	private String MuseumName;
 	private String Description;
 	private String streetAdress;
@@ -21,8 +21,15 @@ public class MuseumHomePageData {
 	private String visitor_info;
 	private String membership;
 	private String website;
+	private Bitmap MuseumImageinBit;
 	
 	
+	public Bitmap getMuseumImageinBit() {
+		return MuseumImageinBit;
+	}
+	public void setMuseumImageinBit(Bitmap museumImageinBit) {
+		MuseumImageinBit = museumImageinBit;
+	}
 	public String getParking() {
 		return parking;
 	}
@@ -73,8 +80,8 @@ public class MuseumHomePageData {
 	public void setZipcode(String zipcode) {
 		this.zipcode = zipcode;
 	}
-	private float latitude;
-	private float longitude;
+	private String latitude;
+	private String longitude;
 	
 	
 	private String hour_M;
@@ -105,16 +112,16 @@ public class MuseumHomePageData {
 	public void setState(String state) {
 		this.state = state;
 	}
-	public float getLatitude() {
+	public String getLatitude() {
 		return latitude;
 	}
-	public void setLatitude(float f) {
+	public void setLatitude(String f) {
 		this.latitude = f;
 	}
-	public float getLongitude() {
+	public String getLongitude() {
 		return longitude;
 	}
-	public void setLongitude(float longitude) {
+	public void setLongitude(String longitude) {
 		this.longitude = longitude;
 	}
 	public String getHour_M() {
@@ -181,7 +188,7 @@ public class MuseumHomePageData {
 	private String HighLights;
 	
 	
-	public Bitmap getImage() {
+	public String getImage() {
 		return Image;
 	}
 	public ArrayList getHours() {
@@ -190,7 +197,7 @@ public class MuseumHomePageData {
 	public void setHours(ArrayList hours) {
 		Hours = hours;
 	}
-	public void setImage(Bitmap image) {
+	public void setImage(String image) {
 		Image = image;
 	}
 	public String getMuseumName() {

@@ -55,17 +55,15 @@ public class MuseumLocationActivity extends FragmentActivity implements Location
 		Log.d("at MuseumLocation", "MuseumLocation");
 		Intent intent=getIntent();
 		Bundle extras=getIntent().getExtras();
-		mlat=extras.getFloat("lat");
-		mlng=extras.getFloat("lng");
+		mlat=Float.parseFloat(extras.getString("lat"));
+		mlng=Float.parseFloat(extras.getString("lng"));
 		
 		float lat=0;
 		float lng=0;
 		if(intent!=null){
-			//lat= intent.getFloatExtra("Lat",(float)42.339151000000001);
-			//lng=intent.getFloatExtra("lng", (float)-71.093853099999990);
 			this.musuemLocation=new LatLng(mlat,mlng);
-			this.phoneNumber=intent.getStringExtra("phone");
-			this.address=intent.getStringExtra("Address");
+			this.phoneNumber=extras.getString("phone");
+			this.address=extras.getString("Address");
 		}
 		Log.d("before Direction",lat+","+lng);
 		

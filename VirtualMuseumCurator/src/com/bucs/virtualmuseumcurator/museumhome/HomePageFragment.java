@@ -24,8 +24,8 @@ public class HomePageFragment  extends ListFragment{
 	private String phone;
 	private String title;
 	private Activity context;
-	private float lat;
-	private float lng;
+	private String lat;
+	private String lng;
 	private ArrayList hours;
 	private String parking;
 	private String tickteprice;
@@ -36,7 +36,7 @@ public class HomePageFragment  extends ListFragment{
 	
 	
 	
-   public HomePageFragment(String Address, float lat,float lng,String phone,String title,Activity context,String membership,String website,String ticketprice,ArrayList hours,String parking,String VisitorInfo )
+   public HomePageFragment(String Address, String lat,String lng,String phone,String title,Activity context,String membership,String website,String ticketprice,ArrayList hours,String parking,String VisitorInfo )
    { 
 	   this.Address=Address;
        this.phone=phone;
